@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celsius</title>
+</head>
+<body>
+    <form id="temp">
+        <label for="temperature">Celsius:C</label>
+        <input type="text" name="temperature" id="celci">
+        <input type="submit" value="Convert">
+    </form>
+    <p>Faranheit:F <span>0</span></p>
+    <script>
+        document.getElementById("temp").addEventListener("submit",function(event){
+            event.preventDefault();
+            converter();
+        })
+
+        function converter(){
+            let f;
+            let x = document.querySelector("#celci").value
+            let x_int = parseInt(x)
+            f = (x_int * 1.8) + 32
+            document.querySelector("span").textContent = f
+        }
+
+
+       // (Celsius * 1.8) + 32
+    </script>
+</body>
+</html>

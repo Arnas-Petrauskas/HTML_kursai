@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+</head>
+<body>
+    <form id="email">
+        <label name="enter_email">Please enter eamil:</label>
+        <input type="email" for="enter_email" class="enter_email"><br><br>
+        <label name="accept">Do you agree to terms:</label>
+        <input type="checkbox" for="accept" id="chek_box"><br><br><br>
+        <input type="submit" value="Create Account">
+    </form>
+    <script>
+        document.getElementById("email").addEventListener("submit", function(event){
+        event.preventDefault();
+        chek_for_vertification();
+        })
+
+        function chek_for_vertification(){
+            let x;
+            let f = document.querySelector("#chek_box");
+            const checked = f.checked;
+            let email = document.querySelector(".enter_email")
+            if(email.checkValidity()){
+                if( checked == true){
+                    window.alert("You have sucesfully registered")
+                } else {
+                    window.alert("You need to agree to fucking spam")
+                }
+                console.log(checked); // Prints true if checked, false if unchecked
+            }
+        }
+    </script>
+</body>
+</html>

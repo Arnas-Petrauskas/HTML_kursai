@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+</head>
+<body>
+    <form id="list_append">
+        <label name="item">Enter item:</label>
+        <input type="text" for="item" class="name">
+        <labe name="times">How many times:</label>
+        <input type="text" for="times" id="times">
+        <input type="submit" value="Create">
+    </form>
+    <table>
+        <ul>
+        </ul>
+    </table>
+    <script>
+        document.getElementById("list_append").addEventListener("submit", function(event){
+        event.preventDefault();
+        add_items();
+        })
+
+        function add_items(){
+            let x = document.getElementById("times").value
+            for (i = 1; i <= x; i++) {
+                let name = document.querySelector(".name").value 
+                const ul_item = document.querySelector("ul");
+                let text = document.createTextNode(name);
+                ul_item.appendChild(text);
+            }
+
+        }
+    </script>
+</body>
+</html>

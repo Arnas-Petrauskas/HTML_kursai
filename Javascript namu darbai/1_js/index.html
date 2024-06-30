@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <script src="index.js"></script> 
+</head>
+<body>
+    <form id="bonus">
+        <label for="work_years">Įveskite kiek metų dirbate:</label><br>
+        <input class="input" type="text" name="work_years"><br>
+        <input type="submit" value="Submit">
+    </form>
+    <p></p>
+    <script>
+    document.getElementById("bonus").addEventListener("submit", function(event) {
+    event.preventDefault();
+    bonus();
+    });
+
+function bonus() {
+    let x = document.querySelector(".input").value
+    if (x>=10) {
+        bonus_payment = 2000
+    } else if (x>2) {
+        bonus_payment = 1000
+    } else {
+        bonus_payment = 500
+    }
+    document.querySelector("p").textContent = `Jūsų premija: ${bonus_payment}`;
+}
+    </script>
+</body>
+</html>

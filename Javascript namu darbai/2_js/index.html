@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+</head>
+<body>
+    <form id="leapyear">
+        <label for="year">Input Year</label><br>
+        <input type="text" name="year" id="year">
+        <input type="submit" value="submit">
+    </form>
+    <p></p>
+    <script>
+        document.getElementById("leapyear").addEventListener("submit", function(event) {
+    event.preventDefault();
+    is_leap_year();
+    });
+    function is_leap_year(){
+        let x = document.querySelector("#year").value 
+        let f
+        if (x % 4 === 0 ){
+            f = "Metai yra keliamieji"
+        } else if (x % 100 ===0 && x % 400 === 0) {
+            f = "Metai yra keliamieji"
+        } else if (x % 100 ===0 && x % 400 !== 0){
+            f = "Metai yra Nekeliamieji"
+        } else {
+            f = "Metai yra Nekeliamieji"
+        }
+        document.querySelector("p").textContent = f
+    }
+    </script>
+</body>
+</html>
