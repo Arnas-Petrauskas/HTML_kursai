@@ -25,13 +25,15 @@
 
         function add_items(){
             let x = document.getElementById("times").value
+            let name = document.querySelector(".name").value 
             for (i = 1; i <= x; i++) {
-                let name = document.querySelector(".name").value 
                 const ul_item = document.querySelector("ul");
+                let li_item = document.createElement("li");
+                console.log("Found")
                 let text = document.createTextNode(name);
-                ul_item.appendChild(text);
+                li_item.appendChild(text);
+                ul_item.appendChild(li_item);
             }
-
         }
     </script>
 </body>
