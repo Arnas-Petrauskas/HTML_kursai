@@ -1,4 +1,4 @@
-document.querySelector("#email").addEventListener("submit", function(event){
+document.querySelector("#star").addEventListener("submit", function(event){
     event.preventDefault();
     pyramid();
     })
