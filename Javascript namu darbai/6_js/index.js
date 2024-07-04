@@ -1,6 +1,5 @@
 document.querySelector("#email").addEventListener("submit", function(event){
     event.preventDefault();
-    f = "a";
     pyramid();
     })
 
